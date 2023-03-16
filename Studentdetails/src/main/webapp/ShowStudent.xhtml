@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Student Details</title>
+	<style type="text/css">
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f0
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+</style>
+</h:head>
+<h:body>
+	<h:form>
+			
+	
+		<center>
+			<h2>
+				<h:outputText value="Student Records" />
+			</h2>
+		</center>
+		<h:dataTable value="#{StudentBio.ShowStudentDetails()}" var="c"
+			boarder="3">
+			<h:column>
+				<f:facet name="header">Student ID 
+				
+				
+				
+				</f:facet>
+				<h:outputText value="#{c.sId}" action="#{StudentBio.Ascsid()}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">FirstName 
+				<h:commandButton value="ASC"  action="#{StudentDAO.showStudentDetailsByFirstNameAsc}"></h:commandButton>
+	<h:commandButton value="Desc"  action="#{StudentDAO.showStudentDetailsByFirstNameDsc}"></h:commandButton>
+				</f:facet>
+				<h:outputText value="#{c.firstName}"  />
+			</h:column>
+			<h:column>
+				<f:facet name="header">LastName 
+				
+	</f:facet>
+		<h:outputText value="#{c.lastName}"  />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Age 
+				
+	
+				</f:facet>
+				<h:outputText value="#{c.age}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">College 
+				
+				</f:facet>
+				<h:outputText value="#{c.college}"  />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Branch 
+				
+			</f:facet>
+				<h:outputText value="#{c.branch}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Year Of Join </f:facet>
+
+				<h:outputText value="#{c.yearOfJoin}"  />
+			</h:column>
+			
+
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>
+
+
+
+
+

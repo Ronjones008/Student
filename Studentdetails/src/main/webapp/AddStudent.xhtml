@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<link rel="stylesheet" href="css/AddStudent.css"/>
+</h:head>
+<h:body>
+	<center>
+
+		<h:form>
+       
+        First Name:
+				<h:inputText id="y" value="#{studentinfo.firstName}" required="true"
+						requiredMessage="FirstName is mandatory" validatormessage="please Enter Valid Name">
+						<f:validateRegex pattern="^([a-zA-Z]+(.)?[\s]*)$" />
+				</h:inputText>
+				<br />
+			<h:message for="y" style="color:red;"></h:message>
+			<br />
+        Last Name:
+        
+<h:inputText id="w" value="#{studentinfo.lastName}" required="true"
+				requiredMessage="last name is mandatory" validatormessage="please Enter Valid Name">
+				<f:validateRegex pattern="^([a-zA-Z]+(.)?[\s]*)$" />
+				
+			</h:inputText>
+			<br />
+			<h:message for="w" style="color:red;"></h:message>
+
+
+			<br />
+
+        Age:
+<h:inputText id="i" value="#{studentinfo.age}" required="true"
+				requiredMessage="Age is mandatory"
+				validatorMessage="Invalid format.. Age should be in between 18 to 27">
+				<f:validateLongRange minimum="18" maximum="27" /> 
+			</h:inputText>
+			<br />
+			<h:message for="i" style="color:red;"></h:message>
+
+			<br />
+
+ 
+
+         College Name:
+<h:inputText id="s" value="#{studentinfo.college}" required="true"
+				requiredMessage="CollegeName is mandatory"
+				validatorMessage="Invalid CollegeName">
+		<f:validateRegex pattern="^([a-zA-Z]+(.)?[\s]*)$" />
+				
+			</h:inputText>
+			<br />
+			<h:message for="s" style="color:red;"></h:message>
+
+			<br />
+
+ 
+
+          Branch :
+<h:inputText id="f" value="#{studentinfo.branch}" required="true"
+				requiredMessage="Branch is mandatory"
+				validatorMessage="Should be in String format">
+		<f:validateRegex pattern="^([a-zA-Z]+(.)?[\s]*)$" />
+				
+			</h:inputText>
+			<br />
+			<h:message for="f" style="color:red;"></h:message>
+
+			<br />
+
+ 
+
+         Year Of Join :
+<h:inputText id="x" value="#{studentinfo.yearOfJoin}" required="true"
+				requiredMessage="yearofjoin is mandatory "
+								validatorMessage="yearofjoin is not greater than 2023 ">
+				
+<f:validateLongRange minimum="1800" maximum="2023" />
+
+			</h:inputText>
+			<br />
+			<h:message for="x" style="color:red;"></h:message>
+
+			<br />
+
+ 
+			<h:commandButton value="Add to list"
+				action="#{StudentBio.addstudent(studentinfo)}" />
+		</h:form>
+	</center>
+</h:body>
+</html>
+
